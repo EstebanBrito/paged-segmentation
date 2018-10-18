@@ -116,10 +116,11 @@ class OS:
 class Process:
     def __init__(self, letter):
         self._name = letter
-        # Cada sección del proceso recibe un número aleatorio de bits
-        self._code_bits = random.randint(2, 8)
-        self._variable_bits = random.randint(2, 8)
-        self._stack_bits = random.randint(2, 8)
+        # Cada sección del proceso recibe un número
+        # aleatorio de bits que es múltiplo de 4
+        self._code_bits = random.randint(1, 2) * 4
+        self._variable_bits = random.randint(1, 2) * 4
+        self._stack_bits = random.randint(1, 2) * 4
 
     def printState(self):
         """Imprime el número de bits de cada sección del proceso"""
