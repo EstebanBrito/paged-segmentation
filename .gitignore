@@ -127,8 +127,9 @@ pyvenv.cfg
 pip-selfcheck.json
 
 ### Excel files ###
-.xlsx
-.xls
+*.xlsx
+*.xls
 
 ### PyCharm stuff ###
-.idea/
+.idea
+venv
