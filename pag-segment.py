@@ -1,10 +1,17 @@
 from openpyxl import Workbook  # Librería para manipular archivos xlsx
-import os
+import osarga en memoria
 import random
 from time import sleep
-
+# PROGRAMA HECHO POR:
+# Esteban Emmanuel Brito Borges
+# Victor Emmanuel Chan Cocom
+# Raúl Armín Novelo Cruz
+# David Iván Mendoza Rodríguez
+# Fernando Ángel Adrián Herrera Garnica
 
 class OS:
+    # Esta clase emula la funcionalidad del sistema operativo
+    # al asignar memoria y recursos a las páginas y secciones de cada proceso.
     def __init__(self):
         self._actual_page = 0
         self._s = Workbook()
@@ -151,12 +158,12 @@ if __name__ == "__main__":
 
     op_sys = OS()
 
-    # Crear procesos
+    # Crear 3 procesos y asignarle una letra como ID
     for i in range(3):
         p = Process(letters[i])
         p.printState()
 
-        # Cargarse a memoria
+        # Cada proceso pide al sistema op que cargue en memoria sus secciones
         op_sys.writeInMemory(p.getCodeBits(), p.getName(), "CODE")
         op_sys.writeInMemory(p.getVarBits(), p.getName(), "VARS")
         op_sys.writeInMemory(p.getStackBits(), p.getName(), "STACK")
